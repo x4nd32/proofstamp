@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProofStamp Support</title>
+<meta name="description" content="Help for ProofStamp, the timestamp camera that puts the date, time and location on your photos and videos.">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header><img src="icon.png" alt=""><a href="index.html">ProofStamp</a></header>
+<nav><a href="index.html" aria-current="page">Support</a><a href="privacy.html">Privacy Policy</a></nav>
+
+<h1>ProofStamp Support</h1>
+<p>ProofStamp puts the date, time and location on your photos and videos, and keeps proof that they haven't been changed.</p>
+
+<div class="card"><strong>Need help?</strong> Email <a href="mailto:support@olympicdigitalsolutions.com?subject=ProofStamp%20support">support@olympicdigitalsolutions.com</a>. Please include your iPhone or iPad model and iOS version.</div>
+
+<h2>Common questions</h2>
+
+<h3>The stamp says "Locating…" or shows no address</h3>
+<p>ProofStamp needs location access: Settings → ProofStamp → Location → <em>While Using the App</em>, with <em>Precise Location</em> on. Indoors, GPS can take a few seconds longer. Street addresses also need an internet connection; GPS coordinates don't.</p>
+
+<h3>Photos aren't appearing in my Photos app</h3>
+<p>Allow ProofStamp to add photos: Settings → ProofStamp → Photos → <em>Add Photos Only</em> (or <em>Full Access</em>). Saving into a named album needs Full Access; with Add Photos Only, photos go to Recents. Every photo is also kept inside ProofStamp.</p>
+
+<h3>How do I change the date format, color or position of the stamp?</h3>
+<p>Tap <em>Stamp style</em> on the camera screen. The preview at the top shows exactly how the stamp will look as you change it. Tap the preview to move the stamp.</p>
+
+<h3>How do I prove a photo hasn't been edited?</h3>
+<p>Open <em>Settings → Verify a photo</em> and choose the file. ProofStamp compares its digital fingerprint with the one recorded when the photo was taken. Verification works on the device that took the photo. You can also type the code printed on the stamp.</p>
+
+<h3>What is a certified timestamp?</h3>
+<p>An independent timestamp authority signs each photo's fingerprint with its own trusted clock, using the RFC 3161 standard. This proves the photo existed at that time, even if the phone's clock was wrong. Only the fingerprint is sent, never the photo. Photos taken offline are certified when you're back online.</p>
+
+<h3>How can someone else check a certified timestamp?</h3>
+<p>Open the photo in ProofStamp, tap <em>Share</em> and send both the photo and its timestamp certificate (.tsr). Anyone can then check them with OpenSSL, without ProofStamp:</p>
+<p><code>openssl ts -verify -in photo.tsr -data photo.jpg -CAfile cacert.pem</code></p>
+<p>For Sectigo certificates, <code>cacert.pem</code> is your computer's standard trusted-certificate bundle (for example <code>/etc/ssl/cert.pem</code> on a Mac). For FreeTSA certificates, download <a href="https://freetsa.org/files/cacert.pem">cacert.pem</a> and <a href="https://freetsa.org/files/tsa.crt">tsa.crt</a> from FreeTSA and add <code>-untrusted tsa.crt</code>.</p>
+<p>The check succeeds only with the exact original file. Messaging apps often re-compress photos; send them by AirDrop, email (as an attachment) or Files instead.</p>
+
+<h3>How do I share a photo without my location?</h3>
+<p>Open the photo, tap <em>Share</em> → <em>Share without location data</em>. This removes the GPS position from the file's hidden data. Anything printed on the stamp stays visible, so turn off the address and coordinates in Stamp Style if you don't want them shown. To always remove it, turn on <em>Settings → Remove GPS data from files</em>.</p>
+
+<h3>My video says "Video not stamped yet"</h3>
+<p>Keep ProofStamp open while a video is being stamped. iOS pauses this work when you switch apps or lock the screen. Tap <em>Try again</em>; the recording is kept until it succeeds.</p>
+
+<h3>How do I make a PDF report?</h3>
+<p>Open a project (or All Photos) and tap <em>Create PDF report</em>. Add your company name and choose 1, 2 or 4 photos per page, then share it by Mail, Messages, AirDrop or Files.</p>
+
+<h3>Will I lose my photos if I get a new iPhone?</h3>
+<p>ProofStamp's photos and records are included in iCloud and computer backups of your device, and move to a new iPhone when you restore from that backup. Deleting the app deletes them, except copies saved to your Photos library.</p>
+
+<h3>Does ProofStamp collect my data?</h3>
+<p>No. There are no accounts, ads or analytics, and your photos and locations stay on your device. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<footer>ProofStamp by Olympic Digital Solutions · Designed and built in the USA</footer>
+</main>
+</body>
+</html>
